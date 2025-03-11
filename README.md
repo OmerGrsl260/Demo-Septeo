@@ -6,10 +6,12 @@
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven" />
   <img src="https://img.shields.io/badge/Allure-2E5783?style=for-the-badge&logo=allure&logoColor=white" alt="Allure" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </div>
 
 <div align="center">
   <p><i>Un framework d'automatisation de tests end-to-end pour le site Septeo, utilisant Cucumber, Selenium WebDriver et Allure Reports.</i></p>
+  <a href="https://github.com/OmerGrsl260/Demo-Septeo"><strong>Voir sur GitHub »</strong></a>
 </div>
 
 ---
@@ -25,6 +27,7 @@
 - [📊 Rapports](#-rapports)
 - [🔍 Scénarios de Test](#-scénarios-de-test)
 - [👨‍💻 Bonnes Pratiques](#-bonnes-pratiques)
+- [🔄 Intégration GitHub](#-intégration-github)
 
 ---
 
@@ -85,6 +88,8 @@ Le framework est conçu pour être :
 | **JUnit** | 4.13.2 | Framework de test unitaire |
 | **Allure Reports** | 2.25.0 | Génération de rapports détaillés |
 | **Maven** | 3.x | Gestion des dépendances et du build |
+| **Git** | - | Gestion de version |
+| **GitHub** | - | Hébergement et partage du code source |
 
 ---
 
@@ -135,13 +140,14 @@ src/
 - Java JDK 17 ou supérieur
 - Maven 3.x
 - Un navigateur web (Chrome, Firefox, Edge)
+- Git
 
 ### Installation
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/Septeo_E2E.git
-   cd Septeo_E2E
+   git clone https://github.com/OmerGrsl260/Demo-Septeo.git
+   cd Demo-Septeo
    ```
 
 2. Installez les dépendances :
@@ -249,6 +255,59 @@ Fonctionnalité: Exploration du site Septeo
 
 ---
 
+## 🔄 Intégration GitHub
+
+<div style="background-color: #f0f7ff; padding: 15px; border-left: 5px solid #0366d6; margin-bottom: 20px;">
+  <p>Ce projet est intégré avec GitHub pour faciliter la collaboration et le partage du code.</p>
+</div>
+
+### 📂 Dépôt GitHub
+
+Le code source est hébergé sur GitHub et accessible publiquement :
+- **URL du dépôt** : [https://github.com/OmerGrsl260/Demo-Septeo](https://github.com/OmerGrsl260/Demo-Septeo)
+
+### 🔀 Workflow Git
+
+Pour contribuer au projet, suivez ce workflow Git standard :
+
+```bash
+# Cloner le dépôt
+git clone https://github.com/OmerGrsl260/Demo-Septeo.git
+
+# Créer une branche pour votre fonctionnalité
+git checkout -b feature/ma-nouvelle-fonctionnalite
+
+# Faire vos modifications et les committer
+git add .
+git commit -m "Description détaillée de vos modifications"
+
+# Pousser vos modifications
+git push origin feature/ma-nouvelle-fonctionnalite
+```
+
+### 🔍 Revue de Code
+
+Les contributions sont soumises via des Pull Requests pour permettre :
+- La revue de code par les pairs
+- L'exécution des tests automatisés
+- La vérification de la qualité du code
+- La discussion des modifications proposées
+
+### 📈 Suivi des Problèmes
+
+Utilisez les Issues GitHub pour :
+- Signaler des bugs
+- Proposer de nouvelles fonctionnalités
+- Discuter des améliorations
+- Suivre les tâches en cours
+
+---
+
 <div align="center">
   <p>Développé avec ❤️ pour Septeo</p>
+  <p>
+    <a href="https://github.com/OmerGrsl260/Demo-Septeo/issues">Signaler un Bug</a>
+    ·
+    <a href="https://github.com/OmerGrsl260/Demo-Septeo/issues">Demander une Fonctionnalité</a>
+  </p>
 </div>
