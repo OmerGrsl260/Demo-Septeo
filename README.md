@@ -203,4 +203,132 @@ Le framework génère automatiquement des rapports Allure après l'exécution de
 
 Pour visualiser le rapport :
 
+```bash
+mvn allure:serve
 ```
+
+Les rapports sont également disponibles dans le dossier `target/site/allure-report`.
+
+---
+
+## 🔄 Intégration Jenkins
+
+<div style="background-color: #fff5ee; padding: 15px; border-left: 5px solid #d24939; margin-bottom: 20px;">
+  <p>Le projet est configuré pour une intégration continue avec Jenkins, permettant une exécution automatisée des tests.</p>
+</div>
+
+### Configuration Jenkins
+
+Le pipeline Jenkins est configuré pour :
+
+- 🔄 **Build Automatique** : Déclenché à chaque push sur la branche main
+- 🧪 **Exécution des Tests** : Lance la suite de tests complète
+- 📊 **Rapports Allure** : Génère et publie les rapports de test
+- 📧 **Notifications** : Envoie des alertes en cas d'échec des tests
+
+### Pipeline
+
+Le pipeline Jenkins est défini dans le `Jenkinsfile` à la racine du projet et comprend les étapes suivantes :
+
+1. **Checkout** : Récupération du code source
+2. **Build** : Compilation et installation des dépendances
+3. **Test** : Exécution des tests automatisés
+4. **Report** : Génération et publication des rapports Allure
+5. **Notify** : Notification des résultats
+
+Pour accéder aux rapports Jenkins :
+1. Connectez-vous à votre instance Jenkins
+2. Naviguez vers le projet "Septeo-E2E-Tests"
+3. Consultez les résultats de build et les rapports Allure
+
+---
+
+## 🔍 Scénarios de Test
+
+<div style="background-color: #f0ffff; padding: 15px; border-left: 5px solid #20b2aa; margin-bottom: 20px;">
+  <p>Les scénarios de test sont écrits en Gherkin, un langage naturel qui facilite la compréhension pour toutes les parties prenantes.</p>
+</div>
+
+### Exemples de Scénarios
+
+```gherkin
+Feature: Navigation sur le site Septeo
+
+  @smoke
+  Scenario: Accès à la page d'accueil
+    Given l'utilisateur est sur la page d'accueil de Septeo
+    When il accepte les cookies
+    Then la page d'accueil est affichée correctement
+
+  @regression
+  Scenario: Sélection d'un métier
+    Given l'utilisateur est sur la page de sélection des métiers
+    When il sélectionne le métier "Notaire"
+    Then il est redirigé vers la page des solutions pour notaires
+```
+
+### Organisation des Tests
+
+Les tests sont organisés par :
+- 🎯 **Fonctionnalité** : Regroupés par domaine fonctionnel
+- 🏷️ **Tags** : Catégorisés pour une exécution ciblée
+- 📊 **Priorité** : Identifiés par niveau d'importance
+
+---
+
+## 👨‍💻 Bonnes Pratiques
+
+<div style="background-color: #f5fffa; padding: 15px; border-left: 5px solid #3cb371; margin-bottom: 20px;">
+  <p>Le projet suit un ensemble de bonnes pratiques pour maintenir un code de qualité et faciliter la maintenance.</p>
+</div>
+
+### Conventions de Code
+
+- 📝 **Nommage explicite** des classes, méthodes et variables
+- 🔍 **Tests atomiques** et indépendants
+- 📚 **Documentation** claire et à jour
+- ♻️ **DRY** (Don't Repeat Yourself)
+- 🎨 **SOLID** principles
+
+### Gestion des Tests
+
+- 🔄 **Isolation** des tests
+- 🧹 **Nettoyage** des données de test
+- 📸 **Screenshots** automatiques en cas d'échec
+- 📝 **Logging** détaillé
+- 🔍 **Assertions** explicites
+
+---
+
+## 🔄 Intégration GitHub
+
+<div style="background-color: #f8f8ff; padding: 15px; border-left: 5px solid #181717; margin-bottom: 20px;">
+  <p>Le projet utilise GitHub pour la gestion du code source et la collaboration.</p>
+</div>
+
+### Workflow Git
+
+1. **Branches** :
+   - `main` : Code stable et testé
+   - `develop` : Développement en cours
+   - `feature/*` : Nouvelles fonctionnalités
+   - `bugfix/*` : Corrections de bugs
+
+2. **Pull Requests** :
+   - Revue de code obligatoire
+   - Tests automatisés
+   - Validation des critères de qualité
+
+3. **Actions GitHub** :
+   - Build automatique
+   - Exécution des tests
+   - Analyse de code
+   - Publication des rapports
+
+### Contribution
+
+1. Créez une nouvelle branche depuis `develop`
+2. Implémentez vos modifications
+3. Testez localement
+4. Soumettez une Pull Request
+5. Attendez la revue et l'approbation
