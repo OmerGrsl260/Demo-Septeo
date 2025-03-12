@@ -146,7 +146,9 @@ src/
 │       └── cucumber.properties
 ```
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
 
 ## 🚀 Démarrage Rapide
 
@@ -173,6 +175,41 @@ src/
    ```bash
    mvn clean install -DskipTests
    ```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
+
+## 🔍 Scénarios de Test
+
+<div style="background-color: #f0ffff; padding: 15px; border-left: 5px solid #20b2aa; margin-bottom: 20px;">
+  <p>Les scénarios de test sont écrits en Gherkin, un langage naturel qui facilite la compréhension pour toutes les parties prenantes.</p>
+</div>
+
+### Exemples de Scénarios
+
+```gherkin
+Feature: Navigation sur le site Septeo
+
+  @smoke
+  Scenario: Accès à la page d'accueil
+    Given l'utilisateur est sur la page d'accueil de Septeo
+    When il accepte les cookies
+    Then la page d'accueil est affichée correctement
+
+  @regression
+  Scenario: Sélection d'un métier
+    Given l'utilisateur est sur la page de sélection des métiers
+    When il sélectionne le métier "Notaire"
+    Then il est redirigé vers la page des solutions pour notaires
+```
+
+### Organisation des Tests
+
+Les tests sont organisés par :
+- 🎯 **Fonctionnalité** : Regroupés par domaine fonctionnel
+- 🏷️ **Tags** : Catégorisés pour une exécution ciblée
+- 📊 **Priorité** : Identifiés par niveau d'importance
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
@@ -266,67 +303,6 @@ Pour accéder aux rapports Jenkins :
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
 </p>
 
-## 🔍 Scénarios de Test
-
-<div style="background-color: #f0ffff; padding: 15px; border-left: 5px solid #20b2aa; margin-bottom: 20px;">
-  <p>Les scénarios de test sont écrits en Gherkin, un langage naturel qui facilite la compréhension pour toutes les parties prenantes.</p>
-</div>
-
-### Exemples de Scénarios
-
-```gherkin
-Feature: Navigation sur le site Septeo
-
-  @smoke
-  Scenario: Accès à la page d'accueil
-    Given l'utilisateur est sur la page d'accueil de Septeo
-    When il accepte les cookies
-    Then la page d'accueil est affichée correctement
-
-  @regression
-  Scenario: Sélection d'un métier
-    Given l'utilisateur est sur la page de sélection des métiers
-    When il sélectionne le métier "Notaire"
-    Then il est redirigé vers la page des solutions pour notaires
-```
-
-### Organisation des Tests
-
-Les tests sont organisés par :
-- 🎯 **Fonctionnalité** : Regroupés par domaine fonctionnel
-- 🏷️ **Tags** : Catégorisés pour une exécution ciblée
-- 📊 **Priorité** : Identifiés par niveau d'importance
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
-</p>
-
-## 👨‍💻 Bonnes Pratiques
-
-<div style="background-color: #f5fffa; padding: 15px; border-left: 5px solid #3cb371; margin-bottom: 20px;">
-  <p>Le projet suit un ensemble de bonnes pratiques pour maintenir un code de qualité et faciliter la maintenance.</p>
-</div>
-
-### Conventions de Code
-
-- 📝 **Nommage explicite** des classes, méthodes et variables
-- 🔍 **Tests atomiques** et indépendants
-- 📚 **Documentation** claire et à jour
-- ♻️ **DRY** (Don't Repeat Yourself)
-- 🎨 **SOLID** principles
-
-### Gestion des Tests
-
-- 🔄 **Isolation** des tests
-- 🧹 **Nettoyage** des données de test
-- 📸 **Screenshots** automatiques en cas d'échec
-- 📝 **Logging** détaillé
-- 🔍 **Assertions** explicites
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
-</p>
-
 ## 🔄 Intégration GitHub
 
 <div style="background-color: #f8f8ff; padding: 15px; border-left: 5px solid #181717; margin-bottom: 20px;">
@@ -376,6 +352,4 @@ Les tests sont organisés par :
   <img src="https://img.shields.io/badge/Made%20with-❤️-yellow?style=for-the-badge" alt="Made with Love" />
   <br>
   <i>🌟 Construisons ensemble l'avenir de l'automatisation des tests chez Septeo 🌟</i>
-  <br>
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
 </div>
