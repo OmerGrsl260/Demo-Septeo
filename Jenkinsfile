@@ -7,37 +7,28 @@ pipeline {
         allure 'allure'
     }
 
-    environment {
-        ALLURE_RESULTS_DIR = 'target/allure-results'
-        ALLURE_REPORT_DIR = 'target/allure-report'
-        BROWSER = 'chrome'
-        MAVEN_OPTS = '-Xmx2048m'
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        disableConcurrentBuilds()
     }
 
     parameters {
-        choice(name: 'BRANCH', choices: ['main', 'QA'], description: 'Sélectionnez la branche à tester')
         choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Sélectionnez le navigateur pour les tests')
         string(name: 'CUCUMBER_TAGS', defaultValue: '@all', description: 'Tags Cucumber à exécuter')
         booleanParam(name: 'SKIP_TESTS', defaultValue: false, description: 'Ignorer les tests ?')
     }
 
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '3')
-        timestamps()
-        disableConcurrentBuilds()
-        skipDefaultCheckout()
+    environment {
+        ALLURE_RESULTS_DIR = 'target/allure-results'
+        ALLURE_REPORT_DIR = 'target/allure-report'
+        MAVEN_OPTS = '-Xmx2048m'
+        BRANCH_NAME = "${env.BRANCH_NAME}"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: "*/${params.BRANCH}"]],
-                        userRemoteConfigs: [[url: 'https://github.com/OmerGrsl260/Demo-Septeo.git']]
-                    ])
-                }
+                checkout scm
             }
         }
 
@@ -49,7 +40,13 @@ pipeline {
 
         stage('Run Tests') {
             when {
-                expression { return !params.SKIP_TESTS }
+                allOf {
+                    not { expression { return params.SKIP_TESTS } }
+                    anyOf {
+                        branch 'main'
+                        branch 'QA'
+                    }
+                }
             }
             steps {
                 script {
@@ -69,6 +66,12 @@ pipeline {
         }
 
         stage('Generate Allure Report') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'QA'
+                }
+            }
             steps {
                 script {
                     allure([
@@ -86,16 +89,17 @@ pipeline {
 
     post {
         always {
-            // Archiver les rapports Allure
-            archiveArtifacts artifacts: "${ALLURE_RESULTS_DIR}/**/*", fingerprint: true, allowEmptyArchive: true
-            archiveArtifacts artifacts: "${ALLURE_REPORT_DIR}/**/*", fingerprint: true, allowEmptyArchive: true
-
-            // Envoyer les notifications (uniquement si des destinataires sont configurés)
             script {
+                if (env.BRANCH_NAME in ['main', 'QA']) {
+                    archiveArtifacts artifacts: "${ALLURE_RESULTS_DIR}/**/*", fingerprint: true, allowEmptyArchive: true
+                    archiveArtifacts artifacts: "${ALLURE_REPORT_DIR}/**/*", fingerprint: true, allowEmptyArchive: true
+                }
+
                 if (env.EMAIL_RECIPIENTS) {
                     emailext (
-                        subject: "Build ${currentBuild.result}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                        subject: "[${env.BRANCH_NAME}] Build ${currentBuild.result}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                         body: """
+                            <p>Branch: ${env.BRANCH_NAME}</p>
                             <p>Build Status: ${currentBuild.result}</p>
                             <p>Build Number: ${env.BUILD_NUMBER}</p>
                             <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>
@@ -104,27 +108,15 @@ pipeline {
                     )
                 }
             }
-
-            // Nettoyer l'espace de travail
             cleanWs()
         }
 
         success {
-            echo 'Résultats des tests:'
-            echo 'Branch utilisée: ${params.BRANCH}'
-            echo 'Navigateur utilisé: ${params.BROWSER}'
-            echo 'Tags Cucumber: ${params.CUCUMBER_TAGS}'
-            echo 'Ignorer les tests: ${params.SKIP_TESTS}'
-            echo 'Status: Réussite'
+            echo "Pipeline sur la branche ${env.BRANCH_NAME} exécuté avec succès !"
         }
 
         failure {
-            echo 'Résultats des tests:'
-            echo 'Branch utilisée: ${params.BRANCH}'
-            echo 'Navigateur utilisé: ${params.BROWSER}'
-            echo 'Tags Cucumber: ${params.CUCUMBER_TAGS}'
-            echo 'Ignorer les tests: ${params.SKIP_TESTS}'
-            echo ' Status: Échec. Veuillez consulter les logs pour plus de détails.'
+            echo "Le pipeline sur la branche ${env.BRANCH_NAME} a échoué. Veuillez vérifier les logs pour plus de détails."
         }
     }
 } 
