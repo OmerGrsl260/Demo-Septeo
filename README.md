@@ -350,6 +350,6 @@ Pour accéder aux rapports Jenkins :
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/vintage.png" alt="Séparateur" />
   <br><br>
   <i>🌟 Construisons ensemble l'avenir de l'automatisation des tests chez Septeo 🌟</i>
-  <br>
+  <br><br>
   <img src="https://img.shields.io/badge/Made%20with-❤️-yellow?style=for-the-badge" alt="Made with Love" />
 </div>
