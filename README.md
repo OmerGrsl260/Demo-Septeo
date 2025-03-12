@@ -90,8 +90,6 @@ Le framework est conçu pour être :
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" alt="Séparateur" />
 </p>
 
----
-
 ## 🛠️ Technologies Utilisées
 
 <div style="background-color: #f5f5f5; padding: 15px; border-left: 5px solid #696969; margin-bottom: 20px;">
@@ -112,7 +110,9 @@ Le framework est conçu pour être :
 | **GitHub** | - | Hébergement et partage du code source |
 | **Selenium DevTools** | v120 | Support CDP pour le débogage avancé |
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
 
 ## 📁 Structure du Projet
 
@@ -120,7 +120,10 @@ Le framework est conçu pour être :
   <p>Le projet suit une structure organisée pour faciliter la maintenance et l'extension.</p>
 </div>
 
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
+
 src/
 ├── test/
 │   ├── java/
@@ -148,7 +151,9 @@ src/
 │       └── cucumber.properties
 ```
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
 
 ## 🚀 Démarrage Rapide
 
@@ -176,7 +181,9 @@ src/
    mvn clean install -DskipTests
    ```
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
 
 ## 🧪 Exécution des Tests
 
@@ -203,7 +210,9 @@ mvn allure:report
 mvn allure:serve
 ```
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
 
 ## 📊 Rapports
 
@@ -226,7 +235,9 @@ mvn allure:serve
 
 Les rapports sont également disponibles dans le dossier `target/site/allure-report`.
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
 
 ## 🔄 Intégration Jenkins
 
@@ -258,7 +269,9 @@ Pour accéder aux rapports Jenkins :
 2. Naviguez vers le projet "Septeo-E2E-Tests"
 3. Consultez les résultats de build et les rapports Allure
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
 
 ## 🔍 Scénarios de Test
 
@@ -291,7 +304,9 @@ Les tests sont organisés par :
 - 🏷️ **Tags** : Catégorisés pour une exécution ciblée
 - 📊 **Priorité** : Identifiés par niveau d'importance
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
 
 ## 👨‍💻 Bonnes Pratiques
 
@@ -315,7 +330,9 @@ Les tests sont organisés par :
 - 📝 **Logging** détaillé
 - 🔍 **Assertions** explicites
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
 
 ## 🔄 Intégration GitHub
 
@@ -350,7 +367,9 @@ Les tests sont organisés par :
 4. Soumettez une Pull Request
 5. Attendez la revue et l'approbation
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
+</p>
 
 ## ✨ Conclusion
 
