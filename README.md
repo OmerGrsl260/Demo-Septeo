@@ -361,7 +361,7 @@ Les tests sont organisés par :
 <div align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png" alt="Séparateur" />
   <br>
-  <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge" alt="Made with Love" />
+  <img src="https://img.shields.io/badge/Made%20with-❤️-yellow?style=for-the-badge" alt="Made with Love" />
   <br>
   <i>🌟 Construisons ensemble l'avenir de l'automatisation des tests chez Septeo 🌟</i>
 </div>
