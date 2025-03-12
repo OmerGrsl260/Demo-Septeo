@@ -21,6 +21,13 @@ pipeline {
         booleanParam(name: 'SKIP_TESTS', defaultValue: false, description: 'Ignorer les tests ?')
     }
 
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '3')
+        timestamps()
+        disableConcurrentBuilds()
+        skipDefaultCheckout()
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -103,11 +110,21 @@ pipeline {
         }
 
         success {
-            echo 'Pipeline exécuté avec succès !'
+            echo 'Résultats des tests:'
+            echo 'Branch utilisée: ${params.BRANCH}'
+            echo 'Navigateur utilisé: ${params.BROWSER}'
+            echo 'Tags Cucumber: ${params.CUCUMBER_TAGS}'
+            echo 'Ignorer les tests: ${params.SKIP_TESTS}'
+            echo 'Status: Réussite'
         }
 
         failure {
-            echo 'Le pipeline a échoué. Veuillez vérifier les logs pour plus de détails.'
+            echo 'Résultats des tests:'
+            echo 'Branch utilisée: ${params.BRANCH}'
+            echo 'Navigateur utilisé: ${params.BROWSER}'
+            echo 'Tags Cucumber: ${params.CUCUMBER_TAGS}'
+            echo 'Ignorer les tests: ${params.SKIP_TESTS}'
+            echo ' Status: Échec. Veuillez consulter les logs pour plus de détails.'
         }
     }
 } 
