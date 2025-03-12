@@ -58,8 +58,6 @@ Le framework est conçu pour être :
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png" alt="Séparateur" />
 </p>
 
----
-
 ## 🏗️ Architecture
 
 <div style="background-color: #fff8e8; padding: 15px; border-left: 5px solid #ffd700; margin-bottom: 20px;">
@@ -120,10 +118,7 @@ Le framework est conçu pour être :
   <p>Le projet suit une structure organisée pour faciliter la maintenance et l'extension.</p>
 </div>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
-</p>
-
+```
 src/
 ├── test/
 │   ├── java/
@@ -151,9 +146,7 @@ src/
 │       └── cucumber.properties
 ```
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="Séparateur" />
-</p>
+---
 
 ## 🚀 Démarrage Rapide
 
