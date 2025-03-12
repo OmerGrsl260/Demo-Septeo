@@ -15,6 +15,7 @@ pipeline {
     }
 
     parameters {
+        choice(name: 'BRANCH', choices: ['main', 'QA'], description: 'Sélectionnez la branche à tester')
         choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Sélectionnez le navigateur pour les tests')
         string(name: 'CUCUMBER_TAGS', defaultValue: '@all', description: 'Tags Cucumber à exécuter')
         booleanParam(name: 'SKIP_TESTS', defaultValue: false, description: 'Ignorer les tests ?')
@@ -23,7 +24,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                script {
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: "*/${params.BRANCH}"]],
+                        userRemoteConfigs: [[url: 'https://github.com/OmerGrsl260/Demo-Septeo.git']]
+                    ])
+                }
             }
         }
 
