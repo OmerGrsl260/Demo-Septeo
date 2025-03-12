@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven" />
   <img src="https://img.shields.io/badge/Allure-2E5783?style=for-the-badge&logo=allure&logoColor=white" alt="Allure" />
+  <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </div>
 
@@ -28,6 +29,7 @@
 - [🔍 Scénarios de Test](#-scénarios-de-test)
 - [👨‍💻 Bonnes Pratiques](#-bonnes-pratiques)
 - [🔄 Intégration GitHub](#-intégration-github)
+- [🔄 Intégration Jenkins](#-intégration-jenkins)
 
 ---
 
@@ -88,8 +90,10 @@ Le framework est conçu pour être :
 | **JUnit** | 4.13.2 | Framework de test unitaire |
 | **Allure Reports** | 2.25.0 | Génération de rapports détaillés |
 | **Maven** | 3.x | Gestion des dépendances et du build |
+| **Jenkins** | 2.x | Intégration et déploiement continus |
 | **Git** | - | Gestion de version |
 | **GitHub** | - | Hébergement et partage du code source |
+| **Selenium DevTools** | v120 | Support CDP pour le débogage avancé |
 
 ---
 
@@ -199,115 +203,4 @@ Le framework génère automatiquement des rapports Allure après l'exécution de
 
 Pour visualiser le rapport :
 
-```bash
-mvn allure:serve
 ```
-
----
-
-## 🔍 Scénarios de Test
-
-<div style="background-color: #f5fffa; padding: 15px; border-left: 5px solid #3cb371; margin-bottom: 20px;">
-  <p>Les scénarios de test sont définis en langage Gherkin dans les fichiers .feature.</p>
-</div>
-
-### Exemple de Scénario
-
-```gherkin
-Fonctionnalité: Exploration du site Septeo
-
-  Scénario: Visiter la page d'accueil de Septeo
-    Étant donné j'ouvre le navigateur
-    Quand je me rends sur le site de Septeo
-    Et j'accepte les cookies
-    Alors je devrais voir la page d'accueil de Septeo
-
-  Scénario: Explorer la première page de Notaire
-    Étant donné j'ouvre le navigateur
-    Quand je me rends sur le site de Septeo
-    Et j'accepte les cookies
-    Et je sélectionne le métier de Notaire
-    Et je sélectionne le premier besoin
-    Alors je devrais voir la première page de Notaire
-```
-
----
-
-## 👨‍💻 Bonnes Pratiques
-
-<div style="background-color: #f8f8ff; padding: 15px; border-left: 5px solid #6a5acd; margin-bottom: 20px;">
-  <p>Le framework suit plusieurs bonnes pratiques pour assurer la qualité et la maintenabilité du code.</p>
-</div>
-
-### 🧩 Principes SOLID
-- **S**ingle Responsibility : Chaque classe a une seule responsabilité
-- **O**pen/Closed : Les classes sont ouvertes à l'extension mais fermées à la modification
-- **L**iskov Substitution : Les sous-classes peuvent remplacer leurs classes parentes
-- **I**nterface Segregation : Interfaces spécifiques plutôt que génériques
-- **D**ependency Inversion : Dépendance envers les abstractions, pas les implémentations
-
-### 📏 Autres Pratiques
-- **DRY (Don't Repeat Yourself)** : Éviter la duplication de code
-- **KISS (Keep It Simple, Stupid)** : Garder le code simple et direct
-- **Page Object Model** : Séparation de la logique de test et de l'interaction avec l'UI
-- **Explicit Waits** : Attentes explicites plutôt qu'implicites
-- **Logging** : Journalisation détaillée pour faciliter le débogage
-
----
-
-## 🔄 Intégration GitHub
-
-<div style="background-color: #f0f7ff; padding: 15px; border-left: 5px solid #0366d6; margin-bottom: 20px;">
-  <p>Ce projet est intégré avec GitHub pour faciliter la collaboration et le partage du code.</p>
-</div>
-
-### 📂 Dépôt GitHub
-
-Le code source est hébergé sur GitHub et accessible publiquement :
-- **URL du dépôt** : [https://github.com/OmerGrsl260/Demo-Septeo](https://github.com/OmerGrsl260/Demo-Septeo)
-
-### 🔀 Workflow Git
-
-Pour contribuer au projet, suivez ce workflow Git standard :
-
-```bash
-# Cloner le dépôt
-git clone https://github.com/OmerGrsl260/Demo-Septeo.git
-
-# Créer une branche pour votre fonctionnalité
-git checkout -b feature/ma-nouvelle-fonctionnalite
-
-# Faire vos modifications et les committer
-git add .
-git commit -m "Description détaillée de vos modifications"
-
-# Pousser vos modifications
-git push origin feature/ma-nouvelle-fonctionnalite
-```
-
-### 🔍 Revue de Code
-
-Les contributions sont soumises via des Pull Requests pour permettre :
-- La revue de code par les pairs
-- L'exécution des tests automatisés
-- La vérification de la qualité du code
-- La discussion des modifications proposées
-
-### 📈 Suivi des Problèmes
-
-Utilisez les Issues GitHub pour :
-- Signaler des bugs
-- Proposer de nouvelles fonctionnalités
-- Discuter des améliorations
-- Suivre les tâches en cours
-
----
-
-<div align="center">
-  <p>Développé avec ❤️ pour Septeo</p>
-  <p>
-    <a href="https://github.com/OmerGrsl260/Demo-Septeo/issues">Signaler un Bug</a>
-    ·
-    <a href="https://github.com/OmerGrsl260/Demo-Septeo/issues">Demander une Fonctionnalité</a>
-  </p>
-</div>
