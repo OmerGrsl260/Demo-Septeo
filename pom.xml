@@ -85,7 +85,7 @@
         <!-- Selenium DevTools -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools-v134</artifactId>
+            <artifactId>selenium-devtools-v122</artifactId>
             <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
