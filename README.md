@@ -13,9 +13,16 @@
 <div align="center">
   <p><i>Un framework d'automatisation de tests end-to-end pour le site Septeo, utilisant Cucumber, Selenium WebDriver et Allure Reports.</i></p>
   <a href="https://github.com/OmerGrsl260/Demo-Septeo"><strong>Voir sur GitHub »</strong></a>
+  <br><br>
+  <img src="https://img.shields.io/github/last-commit/OmerGrsl260/Demo-Septeo?style=flat-square" alt="Last Commit" />
+  <img src="https://img.shields.io/github/commit-activity/m/OmerGrsl260/Demo-Septeo?style=flat-square" alt="Commit Activity" />
+  <img src="https://img.shields.io/github/issues/OmerGrsl260/Demo-Septeo?style=flat-square" alt="Issues" />
+  <img src="https://img.shields.io/github/license/OmerGrsl260/Demo-Septeo?style=flat-square" alt="License" />
 </div>
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
 
 ## 📋 Table des Matières
 
@@ -31,7 +38,9 @@
 - [🔄 Intégration GitHub](#-intégration-github)
 - [🔄 Intégration Jenkins](#-intégration-jenkins)
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Séparateur" />
+</p>
 
 ## 🌟 Présentation
 
@@ -44,6 +53,10 @@ Le framework est conçu pour être :
 - 🚀 **Performant** : Interactions directes et optimisées avec le navigateur
 - 📊 **Informatif** : Rapports détaillés avec captures d'écran et logs
 - 🧩 **Extensible** : Facilement adaptable pour de nouveaux scénarios
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png" alt="Séparateur" />
+</p>
 
 ---
 
@@ -72,6 +85,10 @@ Le framework est conçu pour être :
 │  Context    │   │   Reports   │   │  WebDriver  │
 └─────────────┘   └─────────────┘   └─────────────┘
 ```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" alt="Séparateur" />
+</p>
 
 ---
 
@@ -342,5 +359,9 @@ Les tests sont organisés par :
 </div>
 
 <div align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png" alt="Séparateur" />
+  <br>
+  <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge" alt="Made with Love" />
+  <br>
   <i>🌟 Construisons ensemble l'avenir de l'automatisation des tests chez Septeo 🌟</i>
 </div>
