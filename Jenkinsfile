@@ -1,6 +1,16 @@
 pipeline {
     agent any
 
+    options {
+        // Force Jenkins à toujours utiliser les paramètres définis dans le Jenkinsfile
+        parameters([
+            choice(name: 'BRANCH', choices: ['main', 'QA'], description: 'Sélectionnez la branche à tester'),
+            choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Sélectionnez le navigateur pour les tests'),
+            string(name: 'CUCUMBER_TAGS', defaultValue: '@all', description: 'Tags Cucumber à exécuter'),
+            booleanParam(name: 'SKIP_TESTS', defaultValue: false, description: 'Ignorer les tests ?')
+        ])
+    }
+
     tools {
         maven 'Maven 3.9.9'
         jdk 'JDK 17'
