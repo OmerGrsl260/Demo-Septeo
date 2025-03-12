@@ -81,6 +81,14 @@
             <version>${aspectj.version}</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- Selenium DevTools -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v134</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
