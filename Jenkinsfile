@@ -4,6 +4,7 @@ pipeline {
     tools {
         maven 'Maven 3.9.9'
         jdk 'JDK 17'
+        allure 'allure'
     }
 
     environment {
@@ -61,7 +62,8 @@ pipeline {
                         jdk: '',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
-                        results: [[path: "${ALLURE_RESULTS_DIR}"]]
+                        results: [[path: "${ALLURE_RESULTS_DIR}"]],
+                        report: "${ALLURE_REPORT_DIR}"
                     ])
                 }
             }
@@ -74,16 +76,20 @@ pipeline {
             archiveArtifacts artifacts: "${ALLURE_RESULTS_DIR}/**/*", fingerprint: true, allowEmptyArchive: true
             archiveArtifacts artifacts: "${ALLURE_REPORT_DIR}/**/*", fingerprint: true, allowEmptyArchive: true
 
-            // Envoyer les notifications
-            emailext (
-                subject: "Build ${currentBuild.result}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                body: """
-                    <p>Build Status: ${currentBuild.result}</p>
-                    <p>Build Number: ${env.BUILD_NUMBER}</p>
-                    <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>
-                """,
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-            )
+            // Envoyer les notifications (uniquement si des destinataires sont configurés)
+            script {
+                if (env.EMAIL_RECIPIENTS) {
+                    emailext (
+                        subject: "Build ${currentBuild.result}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                        body: """
+                            <p>Build Status: ${currentBuild.result}</p>
+                            <p>Build Number: ${env.BUILD_NUMBER}</p>
+                            <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>
+                        """,
+                        to: env.EMAIL_RECIPIENTS
+                    )
+                }
+            }
 
             // Nettoyer l'espace de travail
             cleanWs()
